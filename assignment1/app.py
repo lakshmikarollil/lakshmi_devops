@@ -1,12 +1,18 @@
-from flask import Flask 
+# -*- coding: utf-8 -*-
+from flask import Flask, render_template
 
-app = Flask(__name__) # name in this case is going to act as main
+app = Flask(__name__) 
  
+
 @app.route('/')
 def index():
-    return "Hello world"
+    return render_template('index.html')
+
+
 @app.route('/lakshmi')
 def lakshmi():
-    return "Hello Lakshmi"
+    return 'Hello Lakshmi'
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0')
